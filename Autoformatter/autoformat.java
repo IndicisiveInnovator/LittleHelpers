@@ -13,7 +13,6 @@ public class autoformat{
         File file = new File("Autoformatter/format.txt");
 
         try{
-        String filepath = "format.txt";
         StringBuffer buffer = new StringBuffer();
             
         // use buffered reader and file reader instead of scanner and string buffer
@@ -24,13 +23,13 @@ public class autoformat{
         String currLine;
         while((currLine = br.readLine()) != null){
             buffer.append(currLine + "\n" );
-            //System.out.println(currLine);
         }
 
        //combine everything in the buffer and turn it into a string
         String fileContents = buffer.toString();
+
         //test to see if there are any contents in the buffer
-        System.out.println("contents" + fileContents);
+        //System.out.println("contents" + fileContents);
 
         //split all the contents of the string into an array
         String[] array = fileContents.split("\n");
@@ -42,7 +41,6 @@ public class autoformat{
         for(int i = 0; i< array.length;i++){
             String newLine = array[i].substring(array[i].indexOf('.') +1).trim();
             write.append(newLine + "\n");
-;
            
         }
         write.close();//close the writer 
